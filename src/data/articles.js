@@ -1,0 +1,325 @@
+const articles = [
+  {
+    id: 1,
+    titre: "Comment choisir un terrain constructible : les critères essentiels",
+    extrait:
+      "Avant d'acheter un terrain, plusieurs critères techniques et juridiques doivent être vérifiés. Découvrez notre guide complet pour faire le bon choix.",
+    categorie: "Conseils d'achat",
+    date: "15 Avr 2025",
+    auteur: {
+      nom: "Rakoto Jean",
+      role: "Conseiller immobilier",
+      avatar: "https://i.pravatar.cc/40?img=11",
+    },
+    tempsLecture: 6,
+    image: "https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=800&q=80",
+    tags: ["terrain constructible", "guide achat", "critères"],
+    featured: true,
+  },
+  {
+    id: 2,
+    titre: "Comprendre le titre foncier à Madagascar : tout ce qu'il faut savoir",
+    extrait:
+      "Le titre foncier est le document le plus sécurisé pour attester la propriété d'un bien immobilier. Voici comment l'obtenir et pourquoi il est indispensable.",
+    categorie: "Juridique & Fiscalité",
+    date: "08 Avr 2025",
+    auteur: {
+      nom: "Rabe Hery",
+      role: "Expert juridique",
+      avatar: "https://i.pravatar.cc/40?img=12",
+    },
+    tempsLecture: 8,
+    image: "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=800&q=80",
+    tags: ["titre foncier", "Madagascar", "propriété", "légal"],
+  },
+  {
+    id: 3,
+    titre: "Nouveau lotissement à Antananarivo : les terrains sont disponibles",
+    extrait:
+      "Notre agence lance un nouveau lotissement dans la commune d'Ambohimangakely. Des parcelles viabilisées à partir de 500 m² avec titre foncier individuel.",
+    categorie: "Actualités",
+    date: "20 Avr 2025",
+    auteur: {
+      nom: "Rasoa Mialy",
+      role: "Responsable commerciale",
+      avatar: "https://i.pravatar.cc/40?img=5",
+    },
+    tempsLecture: 3,
+    image: "https://images.unsplash.com/photo-1486325212027-8081e485255e?w=800&q=80",
+    tags: ["lotissement", "Antananarivo", "disponible", "viabilisé"],
+  },
+  {
+    id: 4,
+    titre: "Investir dans un terrain en 2025 : une valeur sûre malgré l'inflation",
+    extrait:
+      "Face à l'instabilité économique, le foncier reste l'un des placements les plus rentables à long terme. Analyse du marché et conseils d'experts.",
+    categorie: "Investissement",
+    date: "28 Mar 2025",
+    auteur: {
+      nom: "Rakoto Jean",
+      role: "Conseiller immobilier",
+      avatar: "https://i.pravatar.cc/40?img=11",
+    },
+    tempsLecture: 7,
+    image: "https://images.unsplash.com/photo-1611348586804-61bf6c080437?w=800&q=80",
+    tags: ["investissement", "foncier", "rentabilité", "2025"],
+  },
+  {
+    id: 5,
+    titre: "Les étapes pour acheter un terrain au Madagascar : du choix à l'acte",
+    extrait:
+      "De la recherche du terrain à la signature de l'acte authentique, voici toutes les étapes à suivre pour sécuriser votre achat immobilier.",
+    categorie: "Guide pratique",
+    date: "15 Mar 2025",
+    auteur: {
+      nom: "Rabe Hery",
+      role: "Expert juridique",
+      avatar: "https://i.pravatar.cc/40?img=12",
+    },
+    tempsLecture: 10,
+    image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&q=80",
+    tags: ["étapes achat", "procédure", "acte notarié"],
+  },
+  {
+    id: 6,
+    titre: "Terrain viabilisé vs terrain brut : quelle différence et quel choix ?",
+    extrait:
+      "Un terrain viabilisé est raccordé aux réseaux essentiels (eau, électricité, route). Mais est-il toujours préférable à un terrain brut ? On fait le point.",
+    categorie: "Conseils d'achat",
+    date: "10 Mar 2025",
+    auteur: {
+      nom: "Rasoa Mialy",
+      role: "Responsable commerciale",
+      avatar: "https://i.pravatar.cc/40?img=5",
+    },
+    tempsLecture: 5,
+    image: "https://images.unsplash.com/photo-1464226184884-fa280b87c399?w=800&q=80",
+    tags: ["viabilisé", "terrain brut", "réseaux", "comparatif"],
+  },
+  {
+    id: 7,
+    titre: "La fiscalité sur les transactions foncières à Madagascar en 2025",
+    extrait:
+      "Droits de mutation, taxe foncière, plus-value immobilière… Quelles sont les taxes à prévoir lors de l'achat ou de la vente d'un terrain ?",
+    categorie: "Juridique & Fiscalité",
+    date: "25 Fév 2025",
+    auteur: {
+      nom: "Rabe Hery",
+      role: "Expert juridique",
+      avatar: "https://i.pravatar.cc/40?img=12",
+    },
+    tempsLecture: 9,
+    image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800&q=80",
+    tags: ["fiscalité", "taxes", "droits de mutation", "2025"],
+  },
+  {
+    id: 8,
+    titre: "Évolution des prix des terrains à Antananarivo : bilan 2024-2025",
+    extrait:
+      "Le marché foncier de la capitale malgache continue sa progression. Analyse des prix par commune et perspectives pour les mois à venir.",
+    categorie: "Marché immobilier",
+    date: "18 Fév 2025",
+    auteur: {
+      nom: "Rakoto Jean",
+      role: "Conseiller immobilier",
+      avatar: "https://i.pravatar.cc/40?img=11",
+    },
+    tempsLecture: 6,
+    image: "https://images.unsplash.com/photo-1460472178825-e5240623afd5?w=800&q=80",
+    tags: ["prix terrains", "Antananarivo", "marché", "tendances"],
+  },
+  {
+    id: 9,
+    titre: "Acheter un terrain en zone agricole : opportunités et contraintes",
+    extrait:
+      "Les terres agricoles offrent des prix attractifs mais sont soumises à des restrictions d'usage. Ce qu'il faut savoir avant d'investir.",
+    categorie: "Conseils d'achat",
+    date: "10 Fév 2025",
+    auteur: {
+      nom: "Rasoa Mialy",
+      role: "Responsable commerciale",
+      avatar: "https://i.pravatar.cc/40?img=5",
+    },
+    tempsLecture: 7,
+    image: "https://images.unsplash.com/photo-1464226184884-fa280b87c399?w=800&q=80",
+    tags: ["zone agricole", "restrictions", "opportunités"],
+  },
+  {
+    id: 10,
+    titre: "Comment vérifier la situation juridique d'un terrain avant l'achat",
+    extrait:
+      "Hypothèques, litiges, indivisions… Un terrain peut cacher des problèmes juridiques graves. Voici les vérifications indispensables à effectuer.",
+    categorie: "Juridique & Fiscalité",
+    date: "30 Jan 2025",
+    auteur: {
+      nom: "Rabe Hery",
+      role: "Expert juridique",
+      avatar: "https://i.pravatar.cc/40?img=12",
+    },
+    tempsLecture: 8,
+    image: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=800&q=80",
+    tags: ["vérification juridique", "hypothèque", "due diligence"],
+  },
+  {
+    id: 11,
+    titre: "Les zones en pleine expansion autour d'Antananarivo à surveiller",
+    extrait:
+      "Certaines communes périphériques d'Antananarivo connaissent un développement fulgurant. Voici les zones où investir avant que les prix ne s'envolent.",
+    categorie: "Marché immobilier",
+    date: "22 Jan 2025",
+    auteur: {
+      nom: "Rakoto Jean",
+      role: "Conseiller immobilier",
+      avatar: "https://i.pravatar.cc/40?img=11",
+    },
+    tempsLecture: 5,
+    image: "https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?w=800&q=80",
+    tags: ["expansion", "zones prometteuses", "périphérie", "investissement"],
+  },
+  {
+    id: 12,
+    titre: "Financer l'achat d'un terrain : crédit, épargne ou partenariat ?",
+    extrait:
+      "Quelles sont les options de financement disponibles pour acquérir un terrain à Madagascar ? Comparatif des solutions bancaires et alternatives.",
+    categorie: "Guide pratique",
+    date: "14 Jan 2025",
+    auteur: {
+      nom: "Rasoa Mialy",
+      role: "Responsable commerciale",
+      avatar: "https://i.pravatar.cc/40?img=5",
+    },
+    tempsLecture: 6,
+    image: "https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?w=800&q=80",
+    tags: ["financement", "crédit", "banque", "épargne"],
+  },
+  {
+    id: 13,
+    titre: "Notre agence remporte le prix de l'agence immobilière de l'année 2024",
+    extrait:
+      "Nous sommes fiers d'annoncer avoir été récompensés par le prix national de l'excellence immobilière. Merci à tous nos clients pour leur confiance.",
+    categorie: "Actualités",
+    date: "05 Jan 2025",
+    auteur: {
+      nom: "Rasoa Mialy",
+      role: "Responsable commerciale",
+      avatar: "https://i.pravatar.cc/40?img=5",
+    },
+    tempsLecture: 2,
+    image: "https://images.unsplash.com/photo-1567427017947-545c5f8d16ad?w=800&q=80",
+    tags: ["prix", "récompense", "agence", "excellence"],
+  },
+  {
+    id: 14,
+    titre: "Les erreurs à éviter absolument lors de l'achat d'un terrain",
+    extrait:
+      "Négliger les vérifications juridiques, se fier uniquement au prix, ignorer l'accès à la parcelle… Ces erreurs peuvent coûter très cher.",
+    categorie: "Conseils d'achat",
+    date: "20 Déc 2024",
+    auteur: {
+      nom: "Rabe Hery",
+      role: "Expert juridique",
+      avatar: "https://i.pravatar.cc/40?img=12",
+    },
+    tempsLecture: 7,
+    image: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&q=80",
+    tags: ["erreurs", "pièges", "conseils", "achat terrain"],
+  },
+  {
+    id: 15,
+    titre: "Qu'est-ce qu'un plan de masse et pourquoi est-il obligatoire ?",
+    extrait:
+      "Le plan de masse est un document technique indispensable pour toute demande de permis de construire. Comprendre son rôle et son contenu.",
+    categorie: "Guide pratique",
+    date: "12 Déc 2024",
+    auteur: {
+      nom: "Rakoto Jean",
+      role: "Conseiller immobilier",
+      avatar: "https://i.pravatar.cc/40?img=11",
+    },
+    tempsLecture: 5,
+    image: "https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=800&q=80",
+    tags: ["plan de masse", "permis de construire", "technique"],
+  },
+  {
+    id: 16,
+    titre: "Achat de terrain en indivision : avantages, risques et solutions",
+    extrait:
+      "Acheter un terrain à plusieurs peut être une solution pour réduire les coûts. Mais l'indivision comporte aussi des risques qu'il vaut mieux anticiper.",
+    categorie: "Juridique & Fiscalité",
+    date: "28 Nov 2024",
+    auteur: {
+      nom: "Rabe Hery",
+      role: "Expert juridique",
+      avatar: "https://i.pravatar.cc/40?img=12",
+    },
+    tempsLecture: 8,
+    image: "https://images.unsplash.com/photo-1521791136064-7986c2920216?w=800&q=80",
+    tags: ["indivision", "copropriété", "achat groupé", "risques"],
+  },
+  {
+    id: 17,
+    titre: "Le marché foncier à Madagascar : état des lieux et tendances 2025",
+    extrait:
+      "Après une période de ralentissement, le marché foncier malgache retrouve de la vigueur. Analyse macroéconomique et perspectives sectorielles.",
+    categorie: "Marché immobilier",
+    date: "15 Nov 2024",
+    auteur: {
+      nom: "Rakoto Jean",
+      role: "Conseiller immobilier",
+      avatar: "https://i.pravatar.cc/40?img=11",
+    },
+    tempsLecture: 9,
+    image: "https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?w=800&q=80",
+    tags: ["marché foncier", "Madagascar", "tendances", "économie"],
+  },
+  {
+    id: 18,
+    titre: "Inauguration de notre nouveau bureau à Antsirabe",
+    extrait:
+      "Notre agence poursuit son expansion avec l'ouverture d'une nouvelle antenne à Antsirabe pour mieux servir nos clients dans la région du Vakinankaratra.",
+    categorie: "Actualités",
+    date: "02 Nov 2024",
+    auteur: {
+      nom: "Rasoa Mialy",
+      role: "Responsable commerciale",
+      avatar: "https://i.pravatar.cc/40?img=5",
+    },
+    tempsLecture: 2,
+    image: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80",
+    tags: ["ouverture", "Antsirabe", "expansion", "bureau"],
+  },
+  {
+    id: 19,
+    titre: "Comment rentabiliser un terrain en attendant de construire",
+    extrait:
+      "Vous avez acheté un terrain mais vous n'êtes pas encore prêt à construire ? Voici des idées concrètes pour en tirer des revenus en attendant.",
+    categorie: "Investissement",
+    date: "18 Oct 2024",
+    auteur: {
+      nom: "Rasoa Mialy",
+      role: "Responsable commerciale",
+      avatar: "https://i.pravatar.cc/40?img=5",
+    },
+    tempsLecture: 6,
+    image: "https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=800&q=80",
+    tags: ["rentabilité", "revenus", "location", "valorisation"],
+  },
+  {
+    id: 20,
+    titre: "Terrain agricole vs terrain résidentiel : lequel choisir pour investir ?",
+    extrait:
+      "Les deux types de terrains présentent des profils de risque et de rentabilité très différents. Quel est le meilleur choix selon votre stratégie ?",
+    categorie: "Investissement",
+    date: "05 Oct 2024",
+    auteur: {
+      nom: "Rabe Hery",
+      role: "Expert juridique",
+      avatar: "https://i.pravatar.cc/40?img=12",
+    },
+    tempsLecture: 7,
+    image: "https://images.unsplash.com/photo-1500076656116-558758c991c1?w=800&q=80",
+    tags: ["agricole", "résidentiel", "comparatif", "stratégie"],
+  },
+];
+
+export default articles;

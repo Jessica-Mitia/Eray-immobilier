@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@300;400;500;600;700&display=swap');
+
+/* ── Design Tokens ─────────────────────────────────────── */
+:root {
+  --primary:      #1a3c5e;
+  --primary-dark: #0f2540;
+  --accent:       #f59e0b;
+  --bg:           #f0f4f8;
+  --surface:      #ffffff;
+  --border:       #e2e8f0;
+  --text:         #0f172a;
+  --text-muted:   #64748b;
+  --text-light:   #94a3b8;
+  --radius:       14px;
+  --radius-lg:    18px;
+}
+
+/* ── Reset & Base ──────────────────────────────────────── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* ── Page Layout ───────────────────────────────────────── */
+.blog-page {
+  min-height: 100vh;
+  background: var(--bg);
+}
+
+.blog-container {
+  margin: 0 auto;
+  padding: 0 60px 120px;
+}
+
+.blog-main {
+  background: var(--surface);
+  border-radius: var(--radius-lg);
+  padding: 25px 25px 20px;
+  box-shadow: 0 2px 24px rgba(0, 0, 0, 0.06);
+}
+
+/* ── Featured section spacing ──────────────────────────── */
+.section-featured {
+  margin-bottom: 25px;
+  padding-bottom: 25px;
+  border-bottom: 1px solid var(--border);
+}
+
+/* ── CTA Banner ────────────────────────────────────────── */
+.cta-banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  background: linear-gradient(135deg, var(--primary) 0%, #2563a8 100%);
+  border-radius: var(--radius);
+  padding: 2rem 2.5rem;
+  flex-wrap: wrap;
+}
+
+.cta-text h3 {
+  font-family: sans-serif;
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: 0.35rem;
+}
+
+.cta-text p {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.75);
+  line-height: 1.5;
+}
+
+.cta-btn {
+  padding: 0.75rem 1.75rem;
+  background: var(--accent);
+  color: var(--primary-dark);
+  font-weight: 800;
+  font-size: 0.9rem;
+  border-radius: 10px;
+  white-space: nowrap;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  flex-shrink: 0;
+}
+
+.cta-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(245, 158, 11, 0.4);
+}
+
+/* ── Shared Animation ──────────────────────────────────── */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ── Responsive ────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .blog-container {
+    padding: 0 1rem 3rem;
+  }
+
+  .blog-main {
+    padding: 1.5rem 1.25rem;
+  }
+
+  .cta-banner {
+    flex-direction: column;
+    text-align: center;
+  }
+}
