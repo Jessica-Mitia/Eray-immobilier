@@ -1,0 +1,142 @@
+/* ============================================
+   SECTION SERVICES
+   ============================================ */
+
+.services {
+  padding: 5rem 5% 5rem;
+  background-color: #ffffff;
+}
+
+.services-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.services-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.services-tag {
+  display: inline-block;
+  padding: 0.4rem 1.2rem;
+  background: rgba(37, 99, 235, 0.08);
+  color: #2563EB;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  border-radius: 50px;
+  margin-bottom: 1.5rem;
+}
+
+.services-header h2 {
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  font-weight: 700;
+  color: #0F172A;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.services-header p {
+  font-size: 1.05rem;
+  color: #64748B;
+  max-width: 550px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+
+.service-card {
+  background: #F8FAFC;
+  border: 1px solid #F1F5F9;
+  border-radius: 20px;
+  padding: 2rem 1.5rem;
+  text-align: center;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.service-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(135deg, #2563EB, #6366F1);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+  border-color: transparent;
+}
+
+.service-card:hover::before {
+  transform: scaleX(1);
+}
+
+.service-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1.2rem;
+  display: block;
+}
+
+.service-card h3 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #0F172A;
+  margin-bottom: 0.8rem;
+}
+
+.service-card p {
+  font-size: 0.88rem;
+  color: #64748B;
+  line-height: 1.6;
+  margin-bottom: 1.2rem;
+}
+
+.service-link {
+  text-decoration: none;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #2563EB;
+  transition: color 0.3s ease;
+}
+
+.service-link span {
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+.service-link:hover span {
+  transform: translateX(4px);
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 576px) {
+  .services {
+    padding: 3rem 5% 3rem;
+  }
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+  .service-card {
+    padding: 1.5rem;
+  }
+}
