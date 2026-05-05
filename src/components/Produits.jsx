@@ -101,7 +101,6 @@ const Produits = () => {
           {[...Array(6)].map((_,i) => <div key={i} className="pc-particle"/>)}
         </div>
         <div className="pc-hero-inner">
-          <p className="pc-hero-eyebrow">Bienvenue sur Mada Home</p>
           <h1 className="pc-hero-title">
             Découvrez les meilleurs biens à votre image
           </h1>

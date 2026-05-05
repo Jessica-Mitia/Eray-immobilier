@@ -1,0 +1,346 @@
+/* ============================================
+   BARRE DE NAVIGATION - MODERNE PLEINE LARGEUR
+   Design moderne + couverture totale du header
+   ============================================ */
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;              /* ← Pleine largeur */
+  z-index: 1000;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 0 5%;
+  height: 60px;
+
+  /* Fond verre dépoli (glassmorphism) */
+  background: rgba(15, 15, 45, 0.78);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  
+  /* Bordure subtile en bas uniquement */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  
+  /* Coins : 0 en haut, légèrement arrondis en bas */
+  border-radius: 0;
+  
+  /* Ombre douce */
+  box-shadow: 
+    0 4px 30px rgba(0, 0, 0, 0.1),
+    0 1px 4px rgba(0, 0, 0, 0.05);
+
+  transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+              opacity 0.4s ease,
+              background 0.3s ease;
+}
+
+/* Navbar plus opaque au scroll */
+.navbar-scrolled .navbar {
+  background: rgba(15, 15, 45, 0.94);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 
+    0 8px 40px rgba(0, 0, 0, 0.15),
+    0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+/* Caché / visible */
+.navbar-cachee .navbar {
+  transform: translateY(-100%);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.navbar-hover .navbar {
+  transform: translateY(0);
+  opacity: 1;
+  pointer-events: all;
+}
+
+/* ============================================
+   LOGO
+   ============================================ */
+
+.navbar-logo {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #ffffff;
+  text-decoration: none;
+  white-space: nowrap;
+  flex-shrink: 0;
+  letter-spacing: -0.3px;
+  transition: opacity 0.3s ease;
+}
+
+.navbar-logo:hover {
+  opacity: 0.85;
+}
+
+.navbar-logo span {
+  background: linear-gradient(135deg, #60A5FA, #A78BFA);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ============================================
+   LIENS DE NAVIGATION
+   ============================================ */
+
+.navbar-links {
+  display: flex;
+  list-style: none;
+  gap: 0.3rem;
+  padding: 4px;
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 24px;
+  backdrop-filter: blur(10px);
+}
+
+.navbar-links a {
+  display: block;
+  padding: 0.45rem 1rem;
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.82rem;
+  font-weight: 500;
+  border-radius: 20px;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.navbar-links a:hover {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.navbar-links a.active {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.15);
+  font-weight: 600;
+}
+
+/* ============================================
+   BOUTONS
+   ============================================ */
+
+.navbar-buttons {
+  display: flex;
+  gap: 0.5rem;
+  flex-shrink: 0;
+}
+
+.navbar-button {
+  width: 130px;
+  padding: 0.5rem 0;
+  border-radius: 22px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  text-align: center;
+  letter-spacing: 0.2px;
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Se connecter - outline */
+.navbar-button-login {
+  background: transparent;
+  color: #ffffff;
+  border: 1.5px solid rgba(255, 255, 255, 0.2);
+}
+
+.navbar-button-login:hover {
+  border-color: rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, 0.06);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* S'inscrire - dégradé moderne */
+.navbar-button-signup {
+  background: linear-gradient(135deg, #6366F1, #8B5CF6);
+  color: white;
+  border: none;
+  box-shadow: 
+    0 2px 8px rgba(99, 102, 241, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+.navbar-button-signup::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(255,255,255,0.15), transparent);
+  border-radius: 22px;
+  pointer-events: none;
+}
+
+.navbar-button-signup:hover {
+  transform: translateY(-1px);
+  box-shadow: 
+    0 6px 20px rgba(99, 102, 241, 0.45),
+    inset 0 1px 0 rgba(255, 255, 255, 0.25);
+}
+
+/* ============================================
+   BOUTON BURGER
+   ============================================ */
+
+.navbar-burger {
+  display: none;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #ffffff;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  font-size: 1.1rem;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: all 0.3s ease;
+}
+
+.navbar-burger:hover {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.25);
+}
+
+/* ============================================
+   MENU MOBILE
+   ============================================ */
+
+.navbar-menu-mobile {
+  position: fixed;
+  top: 60px;
+  left: 0;
+  width: 100%;
+  z-index: 998;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.3rem;
+
+  background: rgba(15, 15, 45, 0.96);
+  backdrop-filter: blur(30px) saturate(200%);
+  -webkit-backdrop-filter: blur(30px) saturate(200%);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 1.2rem 0 1.8rem;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+}
+
+.navbar-menu-mobile a {
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 0.95rem;
+  font-weight: 500;
+  padding: 0.7rem 1.5rem;
+  border-radius: 14px;
+  width: 80%;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.navbar-menu-mobile a:hover {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+/* Boutons dans le menu mobile */
+.navbar-buttons-mobile {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  width: 75%;
+  margin-top: 0.8rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.navbar-buttons-mobile .navbar-button {
+  width: 100%;
+  padding: 0.65rem 0;
+  font-size: 0.9rem;
+}
+
+/* ============================================
+   ZONE DE DÉTECTION HOVER
+   ============================================ */
+
+.navbar-detecteur {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 20px;
+  z-index: 999;
+  background: transparent;
+  pointer-events: all;
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+
+@media (max-width: 992px) {
+  .navbar {
+    padding: 0 1.5rem;
+  }
+
+  .navbar-links a {
+    padding: 0.4rem 0.7rem;
+    font-size: 0.76rem;
+  }
+
+  .navbar-button {
+    width: 110px;
+    font-size: 0.76rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    height: 56px;
+    padding: 0 1.2rem;
+  }
+
+  .navbar-links,
+  .navbar-buttons {
+    display: none;
+  }
+
+  .navbar-burger {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .navbar-menu-mobile {
+    top: 56px;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar {
+    height: 50px;
+    padding: 0 1rem;
+  }
+
+  .navbar-logo {
+    font-size: 1.15rem;
+  }
+
+  .navbar-menu-mobile {
+    top: 50px;
+  }
+}

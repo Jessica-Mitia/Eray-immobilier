@@ -1,0 +1,262 @@
+.hero-bloc {
+  position: relative;
+  width: 100%;
+  padding-top: 50px;
+}
+
+.hero {
+  position: relative;
+  width: 100%;
+  height: 70vh;
+  overflow: hidden;
+}
+
+.hero-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  border-radius: 0 0 30% 30%;
+  overflow: hidden;
+}
+
+.hero-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.hero-texte {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  text-align: center;
+  max-width: 800px;
+  width: 90%;
+  padding: 1rem;
+}
+
+.hero-texte h1 {
+  font-size: 3.5rem;
+  font-weight: bold;
+  color: white;
+  line-height: 1.2;
+  margin-bottom: 1.2rem;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+  white-space: nowrap;
+}
+
+.hero-texte p {
+  font-size: 1.1rem;
+  color: white;
+  line-height: 1.8;
+  max-width: 480px;
+  margin: 0 auto;
+  text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.5);
+}
+
+.carte {
+  position: relative;
+  margin-top: -120px;
+  z-index: 10;
+
+  width: 75%;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 60px;
+
+  display: flex;
+  flex-direction: row;
+
+  /* stretch force les 2 bloc à la même hauteur */
+  align-items: stretch;
+
+  gap: 20px;
+  background: transparent;
+  box-sizing: border-box;
+}
+
+.carte-img,
+.carte-info {
+  flex: 0 0 calc(50% - 10px);
+  width: calc(50% - 10px);
+  box-sizing: border-box;
+
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+}
+
+.carte-img {
+  min-height: 280px; 
+}
+
+.carte-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.carte-img img:hover {
+  transform: scale(1.04);
+}
+
+.carte-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 8px;             
+  padding: 20px 24px;   
+  position: relative;
+  overflow: hidden;     /* bloque tout dépassement */
+}
+
+.carte-fermer {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: #f1f5f9;
+  border: none;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  font-size: 12px;
+  color: #94a3b8;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s ease;
+  flex-shrink: 0; /* ne rétrécit jamais */
+}
+
+.carte-fermer:hover {
+  background: #e2e8f0;
+}
+
+.carte-titre {
+  font-size: clamp(0.9rem, 1.4vw, 1.25rem);
+  font-weight: 700;
+  color: #1a202c;
+  line-height: 1.3;
+  padding-right: 28px; 
+  margin-top: 10px;
+
+  /* max 2 lignes, "..." au-delà */
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+/* Description — max 3 lignes */
+.carte-desc {
+  font-size: clamp(0.72rem, 1vw, 0.82rem);
+  color: #718096;
+  line-height: 1.55;
+
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  flex-shrink: 1; /* peut rétrécir si besoin */
+}
+
+/* cache la 2ème description sur desktop */
+.carte-desc + .carte-desc {
+  display: none;
+}
+
+.carte-badges {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px;
+  flex-shrink: 0; /* les badges ne rétrécissent pas */
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: clamp(0.65rem, 0.9vw, 0.78rem);
+  font-weight: 600;
+  border: none;
+  background: #f1f5f9;
+  color: #4a5568;
+  white-space: nowrap;
+}
+
+.badge-cta {
+  background: #d4a843;
+  color: #1a202c;
+  cursor: pointer;
+  font-family: inherit;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.badge-cta:hover {
+  background: #f0c060;
+  transform: translateY(-1px);
+}
+
+@media (max-width: 992px) {
+  .hero-texte h1 { font-size: 2.8rem; }
+  .hero-img { border-radius: 0 0 30% 30%; }
+  .carte { width: 88%; margin-top: -80px; }
+}
+
+@media (max-width: 768px) {
+  .hero { height: 70vh; }
+  .hero-texte { width: 85%; }
+  .hero-texte h1 { font-size: 2.2rem; white-space: normal; }
+  .hero-texte p { font-size: 1rem; }
+  .hero-img { border-radius: 0 0 25% 25%; }
+
+  /* Les 2 cartes passent en colonne */
+  .carte {
+    flex-direction: column;
+    width: 90%;
+    margin-top: -60px;
+    gap: 16px;
+  }
+
+  .carte-img,
+  .carte-info {
+    flex: 0 0 auto;
+    width: 100%;
+  }
+
+  .carte-img { min-height: 240px; }
+
+  /* Réaffiche la 2ème description sur mobile */
+  .carte-desc + .carte-desc {
+    display: -webkit-box;
+  }
+
+  .carte-info {
+    padding: 20px;
+    gap: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-texte h1 { font-size: 1.8rem; }
+  .hero-img { border-radius: 0 0 20% 20%; }
+  .carte { width: 92%; margin-top: -40px; }
+  .carte-img { min-height: 200px; }
+  .carte-info { padding: 16px; gap: 8px; }
+}
