@@ -1,7 +1,14 @@
 import CategoryBadge from "./CategoryBadge";
 import "./ArticleCard.css";
+import { useNavigate } from "react-router-dom";
 
 export default function ArticleCard({ article, style }) {
+  const navigate = useNavigate();
+
+  const handleVoirPlus = () => {
+    navigate(`/blog/${article.id}`);
+  };
+
   return (
     <article className="article-card" style={style}>
       <div className="card-img-wrap">
@@ -33,6 +40,7 @@ export default function ArticleCard({ article, style }) {
             <span className="author-role">{article.auteur.role}</span>
           </div>
         </div>
+        <button className="btn-read" onClick={handleVoirPlus}>Voir plus →</button>
       </div>
     </article>
   );

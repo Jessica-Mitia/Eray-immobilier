@@ -1,14 +1,22 @@
 import React from 'react'
 import './App.css'
-import BlogPage from './BlogPage'
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom'
+import BlogPage from './components/blog/BlogPage'
+import ArticleDetail from './components/blog/ArticleDetail'
 import { Footer } from './components/layout/Footer'
 
 function App() {
   return (
-    <div className="App">
-      <BlogPage />
-      <Footer />
-    </div>
+    <Router>
+      <div className="App">
+        <Routes>
+          <Route path="/" element={<Navigate to="/blog" replace />} />
+          <Route path="/blog" element={<BlogPage />} />
+          <Route path="/blog/:id" element={<ArticleDetail />} />
+        </Routes>
+        <Footer />
+      </div>
+    </Router>
   )
 }
 

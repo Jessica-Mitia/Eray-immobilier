@@ -1,7 +1,9 @@
 import CategoryBadge from "./CategoryBadge";
 import "./FeaturedArticle.css";
+import { useNavigate } from "react-router-dom";
 
 export default function FeaturedArticle({ article }) {
+  const navigate = useNavigate();
   return (
     <article className="featured-article">
       <div className="featured-image-wrap">
@@ -32,6 +34,12 @@ export default function FeaturedArticle({ article }) {
             <span className="author-role">{article.auteur.role}</span>
           </div>
         </div>
+        <button 
+          className="btn-read" 
+          onClick={() => navigate(`/blog/${article.id}`)}
+        >
+          Voir plus →
+        </button>
       </div>
     </article>
   );

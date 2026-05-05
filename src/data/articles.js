@@ -12,7 +12,7 @@ const articles = [
       avatar: "https://i.pravatar.cc/40?img=11",
     },
     tempsLecture: 6,
-    image: "https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=800&q=80",
+    image: "https://i.pinimg.com/736x/e6/99/61/e69961fcf2cb16193e805139a750fbbf.jpg",
     tags: ["terrain constructible", "guide achat", "critères"],
     featured: true,
   },

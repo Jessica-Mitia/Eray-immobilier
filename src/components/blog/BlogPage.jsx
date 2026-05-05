@@ -1,12 +1,12 @@
 import { useState } from "react";
-import articles from "./data/articles";
+import articles from "../../data/articles";
 import {
   BlogHero,
   FeaturedArticle,
   CategoryFilter,
   ArticlesGrid,
   Pagination
-} from "./components/blog";
+} from ".";
 import "./BlogPage.css";
 
 const ITEMS_PER_PAGE = 6;
@@ -15,19 +15,15 @@ export default function BlogPage() {
   const [activeCategory, setActiveCategory] = useState("Tous");
   const [currentPage, setCurrentPage] = useState(1);
 
-  // Article mis en avant (le premier marqué featured ou le premier de la liste)
   const featuredArticle = articles.find((a) => a.featured) || articles[0];
 
-  // Articles sans le featured
   const restArticles = articles.filter((a) => a.id !== featuredArticle.id);
 
-  // Filtrage par catégorie
   const filtered =
     activeCategory === "Tous"
       ? restArticles
       : restArticles.filter((a) => a.categorie === activeCategory);
 
-  // Pagination
   const totalPages = Math.ceil(filtered.length / ITEMS_PER_PAGE);
   const paginated = filtered.slice(
     (currentPage - 1) * ITEMS_PER_PAGE,
@@ -45,25 +41,16 @@ export default function BlogPage() {
         <BlogHero />
 
         <main className="blog-main">
-          {/* Article en vedette */}
           <section className="section-featured">
             <FeaturedArticle article={featuredArticle} />
           </section>
-
-          {/* Filtre catégories */}
           <CategoryFilter active={activeCategory} onChange={handleCategoryChange} />
-
-          {/* Grille d'articles */}
           <ArticlesGrid articles={paginated} />
-
-          {/* Pagination */}
           <Pagination
             currentPage={currentPage}
             totalPages={totalPages}
             onPageChange={setCurrentPage}
           />
-
-          {/* Bannière CTA */}
           <section className="cta-banner">
             <div className="cta-text">
               <h3>Vous cherchez un terrain ?</h3>
