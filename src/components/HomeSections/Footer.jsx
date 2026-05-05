@@ -1,4 +1,3 @@
-// Footer Mada Home
 import './Footer.css';
 
 function Footer() {
