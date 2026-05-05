@@ -5,13 +5,14 @@ import BlogPage from './components/blog/BlogPage'
 import ArticleDetail from './components/blog/ArticleDetail'
 import Produits from './components/Produits'
 import { Footer } from './components/layout/Footer'
+import Hero from './components/Hero/Hero'
 
 function App() {
   return (
     <Router>
       <div className="App">
         <Routes>
-          <Route path="/" element={<Navigate to="/blog" replace />} />
+          <Route path="/" element={<Hero />} />
           <Route path="/blog" element={<BlogPage />} />
           <Route path="/blog/:id" element={<ArticleDetail />} />
           <Route path="/produits" element={<Produits />} />

@@ -1,4 +1,5 @@
 // Section Services - Mada Home
+import { Link } from 'react-router-dom';
 import './Services.css';
 
 function Services() {
@@ -43,9 +44,9 @@ function Services() {
               <div className="service-icon">{service.icon}</div>
               <h3>{service.titre}</h3>
               <p>{service.desc}</p>
-              <a href="#" className="service-link">
+              <Link to="/blog" className="service-link">
                 En savoir plus <span>→</span>
-              </a>
+              </Link>
             </div>
           ))}
         </div>

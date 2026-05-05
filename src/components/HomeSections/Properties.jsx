@@ -1,4 +1,5 @@
 // Section Terrains en vedette
+import { Link } from 'react-router-dom';
 import './Properties.css';
 
 function Properties() {
@@ -66,7 +67,7 @@ function Properties() {
                 </div>
                 <div className="property-footer">
                   <span className="property-prix">{property.prix}</span>
-                  <button className="property-btn">Visiter</button>
+                  <Link to="/produits" className="property-btn">Visiter</Link>
                 </div>
               </div>
             </div>

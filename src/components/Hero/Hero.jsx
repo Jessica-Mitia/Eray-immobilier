@@ -1,8 +1,12 @@
+import { Navbar } from '../layout';
+import Properties from '../HomeSections/Properties';
+import Services from '../HomeSections/Services';
 import './Hero.css';
 
 function Hero() {
   return (
     <div className="hero-bloc">
+      <Navbar />
 
       {/* Image principale */}
       <section className="hero">
@@ -75,9 +79,10 @@ function Hero() {
 
           </div>
         </div>
-
       </div>
 
+      <Properties />
+      <Services />
     </div>
   );
 }

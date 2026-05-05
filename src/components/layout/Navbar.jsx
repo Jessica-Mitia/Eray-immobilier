@@ -32,8 +32,8 @@ const Navbar = () => {
         {/* NAV */}
         <nav className={`hd-nav${menuOpen ? " open" : ""}`}>
           <Link
-            to="/blog"
-            className={`hd-link ${isActive("/blog") ? "active" : ""}`}
+            to="/"
+            className={`hd-link ${isActive("/") ? "active" : ""}`}
             onClick={() => setMenuOpen(false)}
           >
             Accueil
@@ -47,7 +47,7 @@ const Navbar = () => {
           </Link>
           <Link
             to="/blog"
-            className={`hd-link ${isActive("/blog-real") ? "active" : ""}`}
+            className={`hd-link ${isActive("/blog") ? "active" : ""}`}
             onClick={() => setMenuOpen(false)}
           >
             Blog
