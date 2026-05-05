@@ -1,4 +1,3 @@
-// Section Services - Mada Home
 import './Services.css';
 
 function Services() {

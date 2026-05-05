@@ -1,4 +1,3 @@
-// Section Terrains en vedette
 import './Properties.css';
 
 function Properties() {
