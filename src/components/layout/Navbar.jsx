@@ -53,7 +53,7 @@ const Navbar = () => {
             Blog
           </Link>
           <Link
-            to="/blog"
+            to="/about"
             className={`hd-link ${isActive("/about") ? "active" : ""}`}
             onClick={() => setMenuOpen(false)}
           >

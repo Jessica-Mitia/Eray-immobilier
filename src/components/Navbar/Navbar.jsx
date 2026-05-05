@@ -28,7 +28,7 @@ function Navbar() {
             <Link to="/">Accueil</Link>
           </li>
           <li>
-            <a href="#about">À propos</a>
+            <a href="/about">À propos</a>
           </li>
           <li>
             <a href="#blog">Blog</a>

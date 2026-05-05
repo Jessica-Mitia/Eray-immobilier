@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
+import Navbar from "./layout/Navbar"
 import {
   Handshake,
   Award,
@@ -18,7 +19,7 @@ import {
   Send,
   CheckCircle2,
 } from "lucide-react";
-import "./AboutUs.css";
+import "./About.css";
 
 /**
  * AboutUs - Page "À propos" pour ERAY Immobilier
@@ -61,7 +62,7 @@ function Reveal({ children, delay = 0, className = "", as: Tag = "div" }) {
   );
 }
 
-export default function AboutUs() {
+export default function About() {
   const pillars = [
     {
       icon: <Handshake strokeWidth={1.5} />,
@@ -130,7 +131,9 @@ export default function AboutUs() {
   };
 
   return (
+    
     <section className="about-us">
+      <Navbar />
       {/* HERO animé */}
       <div className="about-hero">
         <img
