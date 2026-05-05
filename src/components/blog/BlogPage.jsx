@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import articles from "../../data/articles";
 import {
   BlogHero,
@@ -7,6 +8,7 @@ import {
   ArticlesGrid,
   Pagination
 } from ".";
+import { Navbar } from "../layout";
 import "./BlogPage.css";
 
 const ITEMS_PER_PAGE = 6;
@@ -37,6 +39,7 @@ export default function BlogPage() {
 
   return (
     <div className="blog-page">
+      <Navbar />
       <div className="blog-container">
         <BlogHero />
 
@@ -56,7 +59,7 @@ export default function BlogPage() {
               <h3>Vous cherchez un terrain ?</h3>
               <p>Consultez nos offres disponibles et trouvez la parcelle idéale pour votre projet.</p>
             </div>
-            <a href="#" className="cta-btn">Voir nos terrains →</a>
+            <Link to="/produits" className="cta-btn">Voir nos terrains →</Link>
           </section>
         </main>
       </div>

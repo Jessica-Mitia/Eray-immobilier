@@ -1,4 +1,6 @@
 import { useMemo, useState, useEffect, useRef } from "react";
+import { Link } from "react-router-dom";
+import { Navbar } from "./layout";
 import './Produits.css';
 
 /* IMAGES */
@@ -78,15 +80,6 @@ const AnimSection = ({ children, className = "" }) => {
 const Produits = () => {
   const [query, setQuery]           = useState("");
   const [activeFilter, setFilter]   = useState("Tout");
-  const [menuOpen, setMenuOpen]     = useState(false);
-  const [scrolled, setScrolled]     = useState(false);
-
-  /* header scroll shadow */
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 10);
-    window.addEventListener('scroll', onScroll);
-    return () => window.removeEventListener('scroll', onScroll);
-  }, []);
 
   const filters = ["Tout","Appartement","Villa","Studio"];
 
@@ -100,46 +93,7 @@ const Produits = () => {
   return (
     <div className="pc-root">
 
-      {/* ══════════════ HEADER ══════════════ */}
-      <header className={`hd-header${scrolled ? " hd-scrolled" : ""}`}>
-        <div className="hd-inner">
-
-          {/* LOGO */}
-          <a href="/" className="hd-brand">
-            <div className="hd-logo-box">
-              <svg width="30" height="30" viewBox="0 0 32 32" fill="none">
-                <rect width="32" height="32" rx="8" fill="#01497c"/>
-                <path d="M16 5L29 16v13H21v-8h-10v8H3V16z" fill="white"/>
-              </svg>
-            </div>
-            <span className="hd-site-name">Mada Home</span>
-          </a>
-
-          {/* NAV */}
-          <nav className={`hd-nav${menuOpen ? " open" : ""}`}>
-            <a href="/"        className="hd-link active" onClick={() => setMenuOpen(false)}>Accueil</a>
-            <a href="/Produits" className="hd-link"        onClick={() => setMenuOpen(false)}>Produits</a>
-            <a href="/blog"    className="hd-link"        onClick={() => setMenuOpen(false)}>Blog</a>
-            <a href="/blog"    className="hd-link"        onClick={() => setMenuOpen(false)}>À propos</a>
-          </nav>
-
-          {/* ACTIONS */}
-          <div className="hd-actions">
-            <a href="/connexion"   className="hd-login">Se connecter</a>
-            <a href="/inscription" className="hd-register">S'inscrire</a>
-          </div>
-
-          {/* BURGER */}
-          <button
-            className={`hd-burger${menuOpen ? " open" : ""}`}
-            aria-label="Menu"
-            onClick={() => setMenuOpen((v) => !v)}
-          >
-            <span/><span/><span/>
-          </button>
-
-        </div>
-      </header>
+      <Navbar />
 
       {/* ══════════════ HERO ══════════════ */}
       <section className="pc-hero" style={{ backgroundImage:`url(${heroBg})` }}>

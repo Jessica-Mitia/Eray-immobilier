@@ -1,6 +1,7 @@
 import { useParams, useNavigate } from "react-router-dom";
 import articles from "../../data/articles";
 import CategoryBadge from "./CategoryBadge";
+import { Navbar } from "../layout";
 import "./ArticleDetail.css";
 
 export default function ArticleDetail() {
@@ -22,6 +23,7 @@ export default function ArticleDetail() {
 
   return (
     <div className="article-detail-page">
+      <Navbar />
       <div className="article-container">
         <button onClick={() => navigate("/blog")} className="btn-back-top">
           ← Retour au blog
