@@ -6,9 +6,9 @@ export const Footer = () => {
     <footer className="footer">
       <div className="container footer-content">
         <div className="footer-section">
-          <h3 className="footer-logo">ERAY IMMOBILIER</h3>
+          <h3 className="footer-logo">MADA HOME</h3>
           <p className="footer-description">
-            L'immobilier d'exception, redéfini par l'élégance et l'expertise.
+            Trouvez la maison de vos rêves ou le terrain idéal pour votre projet, avec simplicité et confiance.
           </p>
         </div>
         
@@ -27,13 +27,13 @@ export const Footer = () => {
           <h4>Contact</h4>
           <p>15 Avenue Montaigne, 75008 Paris</p>
           <p>+33 (0)1 23 45 67 89</p>
-          <p>contact@erayimmobilier.com</p>
+          <p>contact@madahome.com</p>
         </div>
       </div>
       
       <div className="footer-bottom">
         <div className="container">
-          <p>&copy; 2026 Eray Immobilier. Tous droits réservés.</p>
+          <p>&copy; 2026 MADA HOME. Tous droits réservés.</p>
         </div>
       </div>
     </footer>
