@@ -1,0 +1,74 @@
+/* ============================================================
+   animations.css — Effets d'entrée au scroll
+   
+   COMMENT ÇA MARCHE :
+   1. Tu ajoutes la classe "animate" + un modificateur à un élément
+   2. L'élément est invisible au départ (opacity: 0)
+   3. Quand il entre dans l'écran, JS ajoute la classe "visible"
+   4. L'animation CSS se déclenche
+
+   MODIFICATEURS DISPONIBLES :
+   - animate--bas     : monte depuis le bas (défaut)
+   - animate--gauche  : vient de la gauche
+   - animate--droite  : vient de la droite
+   - animate--zoom    : apparaît en zoom
+   - animate--fade    : simple fondu
+
+   DÉLAIS (pour animer les éléments en séquence) :
+   - animate--d1 à animate--d5 : délais de 0.1s à 0.5s
+   ============================================================ */
+
+/* ── État initial : tout caché ── */
+.animate {
+  opacity: 0;
+  transition: opacity 0.7s ease, transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: opacity, transform;
+}
+
+/* ── Monte depuis le bas ── */
+.animate--bas {
+  transform: translateY(40px);
+}
+
+/* ── Vient de la gauche ── */
+.animate--gauche {
+  transform: translateX(-40px);
+}
+
+/* ── Vient de la droite ── */
+.animate--droite {
+  transform: translateX(40px);
+}
+
+/* ── Zoom depuis le centre ── */
+.animate--zoom {
+  transform: scale(0.92);
+}
+
+/* ── Simple fondu ── */
+.animate--fade {
+  transform: none;
+}
+
+/* ── État final : visible (ajouté par JS) ── */
+.animate.visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* ── Délais pour les séquences ── */
+.animate--d1 { transition-delay: 0.1s; }
+.animate--d2 { transition-delay: 0.2s; }
+.animate--d3 { transition-delay: 0.3s; }
+.animate--d4 { transition-delay: 0.4s; }
+.animate--d5 { transition-delay: 0.5s; }
+
+/* Désactive les animations pour les personnes
+   qui préfèrent les mouvements réduits (accessibilité) */
+@media (prefers-reduced-motion: reduce) {
+  .animate {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
